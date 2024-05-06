@@ -2,7 +2,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 
 const axiosInstance = axios.create({
-  baseURL: "https://nestjs-02-auction-app.vercel.app",
+  baseURL: "https://auction-gilt.vercel.app",
   withCredentials: true,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -16,7 +16,7 @@ async function refreshAccessToken() {
   }
 
   const newAccessToken = await axios.post(
-    "https://nestjs-02-auction-app.vercel.app/auth/refresh-token",
+    "https://auction-gilt.vercel.app/auth/refresh-token",
     null,
     {
       headers: {
