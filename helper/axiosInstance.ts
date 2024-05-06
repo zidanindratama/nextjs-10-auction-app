@@ -4,6 +4,9 @@ import Cookies from "js-cookie";
 const axiosInstance = axios.create({
   baseURL: "https://nestjs-02-auction-app.vercel.app",
   withCredentials: true,
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
 });
 
 async function refreshAccessToken() {
