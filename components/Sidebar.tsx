@@ -1,0 +1,93 @@
+"use client";
+
+import { Box, Home, Package2, Settings, User } from "lucide-react";
+import Link from "next/link";
+import React from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "./ui/tooltip";
+import { usePathname } from "next/navigation";
+
+const Sidebar = () => {
+  const pathname = usePathname();
+  const isActive = (href: string) => pathname === href;
+
+  return (
+    <aside className="fixed inset-y-0 left-0 z-10 hidden w-14 flex-col border-r bg-background sm:flex">
+      <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+        <Link
+          href="/dashboard"
+          className="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 rounded-full bg-primary text-lg font-semibold text-primary-foreground md:h-8 md:w-8 md:text-base"
+        >
+          <Package2 className="h-4 w-4 transition-all group-hover:scale-110" />
+          <span className="sr-only">Auction</span>
+        </Link>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/dashboard"
+                className={`flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${
+                  isActive("/dashboard") ? "bg-accent" : null
+                }`}
+              >
+                <Home className="h-5 w-5" />
+                <span className="sr-only">Dashboard</span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Dashboard</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/dashboard/users"
+                className={`flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${
+                  isActive("/dashboard/users") ? "bg-accent" : null
+                }`}
+              >
+                <User className="h-5 w-5" />
+                <span className="sr-only">Users</span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Users</TooltipContent>
+          </Tooltip>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/dashboard/items"
+                className={`flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8 ${
+                  isActive("/dashboard/items") ? "bg-accent" : null
+                }`}
+              >
+                <Box className="h-5 w-5" />
+                <span className="sr-only">Items</span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Items</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </nav>
+      <nav className="mt-auto flex flex-col items-center gap-4 px-2 sm:py-5">
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Link
+                href="/dashboard/user-settings"
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8"
+              >
+                <Settings className="h-5 w-5" />
+                <span className="sr-only">Settings</span>
+              </Link>
+            </TooltipTrigger>
+            <TooltipContent side="right">Settings</TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      </nav>
+    </aside>
+  );
+};
+
+export default Sidebar;
