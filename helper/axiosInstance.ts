@@ -1,8 +1,11 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
+const PROD_URL = "https://auction-gilt.vercel.app";
+const DEV_URL = "http://localhost:3100";
+
 const axiosInstance = axios.create({
-  baseURL: "https://auction-gilt.vercel.app",
+  baseURL: PROD_URL,
   withCredentials: true,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -16,7 +19,7 @@ async function refreshAccessToken() {
   }
 
   const newAccessToken = await axios.post(
-    "https://auction-gilt.vercel.app/auth/refresh-token",
+    "http://localhost:3100/auth/refresh-token",
     null,
     {
       headers: {
@@ -53,6 +56,7 @@ axiosInstance.interceptors.response.use(
     const originalRequest = error.config;
     if (error.response.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
+
       try {
         const newAccessToken = await refreshAccessToken();
 
