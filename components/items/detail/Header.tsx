@@ -84,9 +84,9 @@ const Header = ({ id }: any) => {
             </CardHeader>
             <CardContent>
               <div className="text-xs text-muted-foreground">
-                The "start bid price" represents the initial amount set for
-                bidding on an item, serving as the baseline from which potential
-                buyers can place their bids.
+                The &quot;start bid price&quot; represents the initial amount
+                set for bidding on an item, serving as the baseline from which
+                potential buyers can place their bids.
               </div>
             </CardContent>
           </Card>

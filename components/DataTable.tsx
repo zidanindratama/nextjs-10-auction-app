@@ -93,7 +93,7 @@ export const DataTable = ({
         page: pageIndex + 1,
       })}`
     );
-  }, [pageIndex, pageSize]);
+  }, [pageIndex, pageSize, createQueryString, pathname, router]);
 
   const [sorting, setSorting] = React.useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(

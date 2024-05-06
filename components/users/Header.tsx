@@ -60,8 +60,8 @@ const Header = () => {
               <CardDescription className="text-justify md:text-left text-balance leading-relaxed">
                 The auction platform serves three key roles: buyers, sellers,
                 and administrators. Buyers can bid on items, sellers list their
-                items for auction, and admins oversee the platform's operation
-                and user management.
+                items for auction, and admins oversee the platform&apos;s
+                operation and user management.
               </CardDescription>
             </CardHeader>
             <CardFooter>
