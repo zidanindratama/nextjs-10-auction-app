@@ -1,12 +1,14 @@
 import Header from "@/components/items/Header";
 import ItemDataTable from "@/components/items/ItemDataTable";
-import React from "react";
+import React, { Suspense } from "react";
 
 const page = () => {
   return (
     <>
       <Header />
-      <ItemDataTable />
+      <Suspense>
+        <ItemDataTable />
+      </Suspense>
     </>
   );
 };
