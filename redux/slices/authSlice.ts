@@ -20,8 +20,8 @@ const authSlice: any = createSlice({
     },
     signUp: (state, action) => {
       Cookies.set("userData", JSON.stringify(action.payload));
-      Cookies.set("accessToken", JSON.stringify(action.payload.access_token));
-      Cookies.set("refreshToken", JSON.stringify(action.payload.refresh_token));
+      Cookies.set("accessToken", action.payload.access_token);
+      Cookies.set("refreshToken", action.payload.refresh_token);
       toast.success(`Hello ${action.payload.name}!`);
       return {
         ...state,
