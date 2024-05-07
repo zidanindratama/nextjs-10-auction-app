@@ -118,7 +118,9 @@ const Header = ({ id }: any) => {
             {highestBid?.data.bidder.name === yourData?.data.name && (
               <CardFooter>
                 {new Date() > new Date(item?.data.endBidDate) === true ? (
-                  <Button>Pay the item!</Button>
+                  <Button asChild>
+                    <Link href={"/coming-soon"}>Pay the item!</Link>
+                  </Button>
                 ) : null}
               </CardFooter>
             )}
