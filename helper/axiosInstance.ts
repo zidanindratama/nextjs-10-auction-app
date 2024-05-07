@@ -1,3 +1,5 @@
+"use client";
+
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -5,7 +7,7 @@ const PROD_URL = "https://auction-gilt.vercel.app";
 const DEV_URL = "http://localhost:3100";
 
 const axiosInstance = axios.create({
-  baseURL: PROD_URL,
+  baseURL: DEV_URL,
   withCredentials: true,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -14,14 +16,13 @@ const axiosInstance = axios.create({
 
 async function refreshAccessToken() {
   const refreshToken = Cookies.get("refreshToken");
-  console.log(refreshToken);
 
   if (!refreshToken) {
     throw new Error("No refreshToken found");
   }
 
   const newAccessToken = await axios.post(
-    `${PROD_URL}/auth/refresh-token`,
+    `${DEV_URL}/auth/refresh-token`,
     null,
     {
       headers: {

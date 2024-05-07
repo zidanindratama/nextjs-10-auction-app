@@ -1,3 +1,4 @@
+"use client";
 import Header from "@/components/dashboard/Header";
 import ItemList from "@/components/dashboard/ItemList";
 
