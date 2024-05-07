@@ -7,7 +7,7 @@ const PROD_URL = "https://auction-gilt.vercel.app";
 const DEV_URL = "http://localhost:3100";
 
 const axiosInstance = axios.create({
-  baseURL: DEV_URL,
+  baseURL: PROD_URL,
   withCredentials: true,
   headers: {
     "Content-Type": "application/x-www-form-urlencoded",
@@ -22,7 +22,7 @@ async function refreshAccessToken() {
   }
 
   const newAccessToken = await axios.post(
-    `${DEV_URL}/auth/refresh-token`,
+    `${PROD_URL}/auth/refresh-token`,
     null,
     {
       headers: {
