@@ -1,5 +1,3 @@
-"use client";
-
 import axios from "axios";
 import Cookies from "js-cookie";
 
@@ -16,7 +14,6 @@ const axiosInstance = axios.create({
 
 async function refreshAccessToken() {
   const refreshToken = Cookies.get("refreshToken");
-  console.log(refreshToken);
 
   if (!refreshToken) {
     throw new Error("No refreshToken found");
