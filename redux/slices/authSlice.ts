@@ -11,6 +11,7 @@ const authSlice: any = createSlice({
     signIn: (state, action) => {
       Cookies.set("userData", JSON.stringify(action.payload));
       Cookies.set("accessToken", JSON.stringify(action.payload.access_token));
+      Cookies.set("refreshToken", JSON.stringify(action.payload.refresh_token));
       toast.success(`Welcome back ${action.payload.name}!`);
 
       return {
@@ -20,7 +21,7 @@ const authSlice: any = createSlice({
     signUp: (state, action) => {
       Cookies.set("userData", JSON.stringify(action.payload));
       Cookies.set("accessToken", JSON.stringify(action.payload.access_token));
-      // Cookies.set("refreshToken", JSON.stringify(action.payload.access_token));
+      Cookies.set("refreshToken", JSON.stringify(action.payload.refresh_token));
       toast.success(`Hello ${action.payload.name}!`);
       return {
         ...state,

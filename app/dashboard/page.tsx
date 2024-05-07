@@ -4,8 +4,9 @@ import ItemList from "@/components/dashboard/ItemList";
 import Cookies from "js-cookie";
 
 const page = () => {
-  const refreshToken = Cookies.get("refreshToken");
+  const refreshToken = Cookies.get();
   console.log(refreshToken);
+
   return (
     <>
       <Header />
