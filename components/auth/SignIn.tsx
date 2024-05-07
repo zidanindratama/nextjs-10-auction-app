@@ -44,10 +44,6 @@ const SignIn = () => {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "zidanindratama@gmail.com",
-      password: "test123",
-    },
   });
 
   const onSubmit = async (data: FieldValues) => {
