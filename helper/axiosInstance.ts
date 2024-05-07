@@ -14,12 +14,14 @@ const axiosInstance = axios.create({
 
 async function refreshAccessToken() {
   const refreshToken = Cookies.get("refreshToken");
+  console.log(refreshToken);
+
   if (!refreshToken) {
     throw new Error("No refreshToken found");
   }
 
   const newAccessToken = await axios.post(
-    "http://localhost:3100/auth/refresh-token",
+    `${PROD_URL}/auth/refresh-token`,
     null,
     {
       headers: {
