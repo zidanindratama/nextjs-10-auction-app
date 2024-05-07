@@ -27,6 +27,7 @@ async function refreshAccessToken() {
     {
       headers: {
         Authorization: `Bearer ${refreshToken}`,
+        "Content-Type": "application/json",
       },
     }
   );
