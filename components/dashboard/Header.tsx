@@ -82,14 +82,6 @@ const Header = () => {
                           <TableRow>
                             <TableCell>
                               <div className="font-medium capitalize text-left">
-                                Daffa Ramzy Saputra
-                              </div>
-                            </TableCell>
-                            <TableCell>50422371</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>
-                              <div className="font-medium capitalize text-left">
                                 Dimas Arya Sauki Alaudin
                               </div>
                             </TableCell>
@@ -102,14 +94,6 @@ const Header = () => {
                               </div>
                             </TableCell>
                             <TableCell>50422968</TableCell>
-                          </TableRow>
-                          <TableRow>
-                            <TableCell>
-                              <div className="font-medium capitalize text-left">
-                                Muhammad Iqbal
-                              </div>
-                            </TableCell>
-                            <TableCell>51422078</TableCell>
                           </TableRow>
                           <TableRow>
                             <TableCell>
