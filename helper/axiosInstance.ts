@@ -14,6 +14,7 @@ const axiosInstance = axios.create({
 
 async function refreshAccessToken() {
   const refreshToken = Cookies.get("refreshToken");
+  // const token = refreshToken?.replace(/"/g, ""); // Removing all occurrences of double quotes
 
   if (!refreshToken) {
     throw new Error("No refreshToken found");

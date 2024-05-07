@@ -4,8 +4,9 @@ import ItemList from "@/components/dashboard/ItemList";
 import Cookies from "js-cookie";
 
 const page = () => {
-  const refreshToken = Cookies.get();
-  console.log(refreshToken);
+  const refreshToken = Cookies.get("refreshToken");
+  const token = refreshToken?.replace(/"/g, ""); // Removing all occurrences of double quotes
+  console.log(token);
 
   return (
     <>
